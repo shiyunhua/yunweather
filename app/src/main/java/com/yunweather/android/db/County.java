@@ -1,5 +1,7 @@
 package com.yunweather.android.db;
 
+import org.litepal.crud.DataSupport;
+
 /**
  * Created by Wilson on 2017/10/14.
  */
