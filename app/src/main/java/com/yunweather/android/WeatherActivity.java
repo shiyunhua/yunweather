@@ -1,5 +1,6 @@
 package com.yunweather.android;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -23,6 +24,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.yunweather.android.gson.Forecast;
 import com.yunweather.android.gson.Weather;
+import com.yunweather.android.service.AutoUpdateService;
 import com.yunweather.android.util.HttpUtil;
 import com.yunweather.android.util.Utility;
 
@@ -231,6 +233,9 @@ public class WeatherActivity extends AppCompatActivity {
 		carWashText.setText(carWash);
 		sportText.setText(sport);
 		weatherLayout.setVisibility(View.VISIBLE);
+
+		Intent intent=new Intent(this, AutoUpdateService.class);
+		stopService(intent);
 	}
 
 
